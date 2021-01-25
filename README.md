@@ -1,9 +1,9 @@
 # PPS-LAB-ASSIGNMENT_2020
 CSE(DS)2024
 
-[![Contributors][contributors-shield]]
-[![Forks][forks-shield]]
-[![MIT License][license-shield]
+![Contributors][contributors-shield]
+![Forks][forks-shield]
+![MIT License][license-shield]
 
 
 
