@@ -11,3 +11,9 @@ CSE(DS)2024
 [contributors-shield]: https://img.shields.io/github/contributors/0xpurpl3/PPS-LAB-ASSIGNMENT_2020?style=plastic
 [forks-shield]: https://img.shields.io/github/forks/0xpurpl3/PPS-LAB-ASSIGNMENT_2020?style=for-the-badge
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+
+
+# All asssignment pdf link -->
+
+https://drive.google.com/file/d/1U3FrVmK_jUxXY22VVsrSvU1WvWN80ZMf/view?usp=sharing
