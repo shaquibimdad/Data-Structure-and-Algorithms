@@ -1,28 +1,29 @@
 #include <stdio.h>
 #include <math.h>
+int main() {
+   int num, originalnum, remainder, n = 0, result = 0;
 
-int main(){
-    int n,dup,sum,digits,r;
+   printf("Enter an integer: ");
+   scanf("%d", &num);
 
-    printf("Enter a number: ");
-    scanf("%d",&n);
+   originalnum = num;
 
-    sum = 0;
-    digits = 0;
+    
+   for (originalnum = num; originalnum != 0; n++) {
+       originalnum /= 10;
+   }
 
-    dup = n;
-    while(dup){
-        digits++;
-        dup/=10;
-    }
+   for (originalnum = num; originalnum != 0; originalnum /= 10) {
+       remainder = originalnum % 10;
 
-    dup = n;
-    while(dup){
-        r = dup%10;
-        sum+=(int)(pow(r,digits));
-        dup/=10;
-    }
+      
+      result += pow(remainder, n);
+   }
 
-    if(n == sum) printf("\n%d is an Armstrong Number\n",n);
-    return 0;
+
+   if ((int)result == num)
+    printf("%d is an Armstrong number.", num);
+   else
+    printf("%d is not an Armstrong number.", num);
+   return 0;
 }
