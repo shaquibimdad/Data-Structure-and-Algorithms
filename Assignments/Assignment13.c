@@ -2,33 +2,36 @@
 
 int main()
 {
-  int elements[50], n, c, d, swap;
 
-  printf("Enter the number of elements you want to store:\n");
-  scanf("%d", &n);
+    int i, j, a, n, s[50];
 
-  printf("Enter %d integer values: \n", n);
 
-  for (c = 0; c < n; c++)
-    scanf("%d", &elements[c]);
-                                                // Bubble Sort
-  for (c = 0 ; c < n - 1; c++)
-  {
-    for (d = 0 ; d < n - c - 1; d++)
+    printf("Enter the number of elements you want to store: ");
+    scanf("%d", &n);
+
+    printf("Enter %d integer values: \n",n);
+
+    for (i = 0; i < n; ++i)
+    
+        scanf("%d", &s[i]);
+                                                   //  Selection Sort
+    for (i = 0; i < n; ++i)
     {
-      if (elements[d] < elements[d+1])
-      {
-        swap       = elements[d];
-        elements[d]   = elements[d+1];
-        elements[d+1] = swap;
-      }
+        for (j = i + 1; j < n; ++j)
+        {
+            if (s[i] < s[j])
+            {
+                a = s[i];
+                s[i] = s[j];
+                s[j] = a;
+            }
+        }
     }
-  }
 
-  printf("After sorting the elements in descending order is: \n");
+    printf("After sorting the array is: \n");
 
-  for (c = 0; c < n; c++)
-     printf("%d\n", elements[c]);
-
-  return 0;
+    for (i = 0; i < n; ++i)
+    {
+        printf("%d\n", elements[i]);
+    }
 }
