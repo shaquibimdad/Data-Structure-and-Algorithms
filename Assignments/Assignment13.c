@@ -1,24 +1,34 @@
 #include <stdio.h>
 
-int main(){
+int main()
+{
+  int elements[50], n, c, d, swap;
 
-    int size,i,j,temp;
-    printf("Enter size for the array: ");
-    scanf("%d",&size);
+  printf("Enter the number of elements you want to store:\n");
+  scanf("%d", &n);
 
-    int arr[size];
-    for(i=0; i<size; i++) scanf("%d",&arr[i]);
+  printf("Enter %d integer values: \n", n);
 
-    for(i=0; i<size; i++){
-        for(j=i+1; j<size; j++){
-            if(arr[i]>arr[j]){
-                temp=arr[i];
-                arr[i]=arr[j];
-                arr[j]=temp;
-            }
-        }
+  for (c = 0; c < n; c++)
+    scanf("%d", &elements[c]);
+                                                // Bubble Sort
+  for (c = 0 ; c < n - 1; c++)
+  {
+    for (d = 0 ; d < n - c - 1; d++)
+    {
+      if (elements[d] < elements[d+1])
+      {
+        swap       = elements[d];
+        elements[d]   = elements[d+1];
+        elements[d+1] = swap;
+      }
     }
-    printf("\nSorted Array:\n");
-    for(i=0; i<size; i++) printf("%d ",arr[i]);
-    return 0;
+  }
+
+  printf("After sorting the elements in descending order is: \n");
+
+  for (c = 0; c < n; c++)
+     printf("%d\n", elements[c]);
+
+  return 0;
 }
