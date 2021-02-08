@@ -32,6 +32,6 @@ int main()
 
     for (i = 0; i < n; ++i)
     {
-        printf("%d\n", elements[i]);
+        printf("%d\n", s[i]);
     }
 }
