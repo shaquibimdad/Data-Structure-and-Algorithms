@@ -90,9 +90,11 @@ int main()
             break;
         case 2:
             insert(arr, n);
+            n++;
             break;
         case 3:
             delete (arr, n);
+            n--;
             break;
         case 4:
             display(arr, n);
