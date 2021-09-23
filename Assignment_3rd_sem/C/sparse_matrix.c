@@ -25,7 +25,7 @@ int main()
 			if (mat[i][j] != 0)
 				nzero++;
 		}
-		printf("\n");
+		printf("\n");  ///////sigmmmmmmmmm
 	}
 	zero = (r * c) - nzero;
 	if (nzero >= zero)
