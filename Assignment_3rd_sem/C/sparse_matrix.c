@@ -1,49 +1,66 @@
 #include <stdio.h>
+
 int main()
 {
-    int row, col, i, j, z = 0, nz = 0;
-    printf("Enter the number of rows: ");
-    scanf("%d", &row);
-    printf("Enter the number of columns: ");
-    scanf("%d", &col);
-    printf("Enter the elements of 2D matrix:\n");
-    int matrix[row][col];
-    for (i = 0; i < row; i++)
-    {
-        for (j = 0; j < col; j++)
-        {
-            printf("Enter at %d , %d postion of matrix: ", i, j);
-            scanf("%d", &matrix[i][j]);
-        }
-    }
-    for (i = 0; i < row; i++)
-    {
-        for (j = 0; j < col; j++)
-        {
-            if (matrix[i][j] == 0)
-            {
-                z++;
-            }
-            else
-            {
-                nz++;
-            }
-        }
-    }
-    if (z > nz)
-    {
-        printf("It's an sparse matrix\n");
-        printf("%d  %d  %d\n", row, col, nz);
-    }
-    for (i = 0; i < row; i++)
-    {
-        for (j = 0; j < col; j++)
-        {
-            if (matrix[i][j] != 0)
-            {
-                printf("%d  %d  %d\n", i, j, matrix[i][j]);
-            }
-        }
-    }
-    return 0;
-}
+	int mat[50][50], sparse[50][3];
+	int i, j, nzero = 0, r, c, k, m, zero = 0;
+	printf("Enter number of rows : ");
+	scanf("%d", &r);
+	printf("Enter number of columns : ");
+	scanf("%d", &c);
+
+	for (i = 0; i < r; i++)
+		for (j = 0; j < c; j++)
+		{
+			printf("Enter element for row %d,column %d : ", i + 1, j + 1);
+			scanf("%d", &mat[i][j]);
+		}
+
+	printf("Entered matrix is : \n\n");
+	for (i = 0; i < r; i++)
+	{
+		for (j = 0; j < c; j++)
+		{
+			printf("%6d", mat[i][j]);
+			if (mat[i][j] != 0)
+				nzero++;
+		}
+		printf("\n");
+	}
+	zero = (r * c) - nzero;
+	if (nzero >= zero)
+	{
+		printf("\nThe matrix is not a sparse matrix\n");
+		return 0;
+	}
+	else
+	{
+		k =  1;
+		sparse[0][0] = r;
+		sparse[0][1] = c;
+		sparse[0][2] = nzero;
+		m = 1;
+
+		for (i = 0; i < r; i++)
+		{
+			for (j = 0; j < c; j++)
+			{
+				if (mat[i][j]!=0)
+				{
+					sparse[k][0] = i;
+					sparse[k][1] = j;
+					sparse[k][2] = mat[i][j];
+					k++;
+				}
+			}
+		}
+	}
+
+		printf("Sparse matrix in three tuple format is :\n");
+		for (i = 0; i < k; i++)
+		{
+			for (j = 0; j < 3; j++)
+				printf("%6d", sparse[i][j]);
+			printf("\n");
+		}
+	}
