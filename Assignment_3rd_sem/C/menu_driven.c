@@ -55,9 +55,7 @@ void delete (int arr[], int len)
         {
             arr[i] = arr[i + 1];
         }
-
     }
-
 }
 void display(int arr[], int n)
 {
