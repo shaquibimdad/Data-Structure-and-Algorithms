@@ -1,77 +1,93 @@
 #include <stdio.h>
-void showpath(int j, int path[])
+#define inf 9999
+#define max 10
+
+int cost[max][max], dist[max], status[max], pi[max];
+char name[max];
+void shownpath(int a)
 {
-    if (path[j] == 0)
+    if (a == 0 || pi[a] == 0)
     {
-        printf("%d", j);
-        return;
+        printf(" %c", name[pi[a]]);
     }
-    showpath(path[j], path);
-    printf("---->%d", j);
+    else
+    {
+        shownpath(pi[a]);
+        printf("-> %c", name[pi[a]]);
+    }
 }
-void dijkstra(int n, int m, int source, int adj[][100])
+void dijkstra(int v, int n)
 {
-    int dist[n + 1], visited[n + 1], path[n + 1], u;
-    for (int i = 1; i <= n; i++)
+    int i, c, w, min, u;
+    for (i = 1; i <= n; i++)
     {
-        visited[i] = 0;
-        dist[i] = adj[source][i];
-        path[i] = source;
+        status[i] = 0;
+        dist[i] = cost[v][i];
+        pi[i] = 0;
     }
-    dist[source] = 0;
-    visited[source] = 1;
-    path[source] = 0;
-    for (int edges = 1; edges <= m - 2; edges++)
+    dist[v] = 0;
+    status[v] = 1;
+    for (c = 2; c <= n; c++)
     {
-        int min = 1e5;
-        for (int i = 1; i <= n; i++)
+        min = inf;
+        for (w = 1; w <= n; w++)
         {
-            if (dist[i] < min && visited[i] != 1)
+            if ((dist[w] < min) && (status[w] != 1))
             {
-                min = dist[i];
-                u = i;
+                min = dist[w];
+                u = w;
             }
         }
-        visited[u] = 1;
-        for (int i = 1; i <= n; i++)
+        status[u] = 1;
+        for (w = 1; w <= n; w++)
         {
-            if (min + adj[u][i] < dist[i] && visited[i] != 1)
+            if ((dist[u] + cost[u][w] < dist[w]) && (status[w] != 1))
             {
-                dist[i] = min + adj[u][i];
-                path[i] = u;
+                dist[w] = dist[u] + cost[u][w];
+                pi[w] = u;
             }
         }
     }
-    printf("\nMinimum Distance from Source:\n");
-    for (int i = 1; i <= n; i++)
-    {
-        printf("%d ", dist[i]);
-    }
-    printf("\n");
-    showpath(n, path);
+    printf("\n The minimum  distance is %d", min);
 }
 int main()
 {
-    int n, m, s;
-    int adj[100][100];
-    printf("\nEnter the no. of vertices:");
+    int i, j, n, v, x;
+    printf("\n Enter the No of Vertices : ");
     scanf("%d", &n);
-    printf("\nEnter the no. of edges:");
-    scanf("%d", &m);
-    printf("\nEnter the Adjacent Matrix:\n");
-    for (int i = 1; i <= n; i++)
+    printf("\n Enter the  Vertices : ");
+    for (i = 1; i <= n; i++)
     {
-        for (int j = 1; j <= n; j++)
+        scanf("%s", &name[i]);
+    }
+    printf("\n Enter the Numbers \n ");
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= n; j++)
         {
-            scanf("%d", &adj[i][j]);
-            if (adj[i][j] == 0)
-            {
-                adj[i][j] = 1e5;
-            }
+            scanf("%d", &cost[i][j]);
+            if (i != j && cost[i][j] == 0)
+                cost[i][j] = inf;
         }
     }
-    printf("\nSource Node:");
-    scanf("%d", &s);
-    dijkstra(n, m, s, adj);
+    printf("\n Enter the Source Vertices : ");
+    scanf("%d", &v);
+    printf("\n Enter the Target Vertices : ");
+    scanf("%d", &x);
+
+    dijkstra(v, n);
+
+    printf("\n The Source Vertices %c ", name[v]);
+    printf("\n The Target Vertices %c ", name[x]);
+    printf("\nThe path %c", name[v]);
+    shownpath(x);
+    printf("--> %c", name[x]);
     return 0;
 }
+/*
+0 10 0 5 0
+0 0 1 2 0
+0 0 0 0 4
+0 3 9 0 2
+20 0 6 0 0
+*/

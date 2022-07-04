@@ -1,19 +1,22 @@
 #include <stdio.h>
-#define INF 9999
-int mincost = 0, v1, v2, n, k, i, j, g[100][100], visited[10], min;
+int visited[10], min, mincost = 0, g[20][20], n;
+#define inf 9999
 void prims()
 {
-    for (i = 1; i <= n; i++)
-        visited[i] = 0;
+    int i, j, k, v1, v2;
+    for (j = 1; j <= n; j++)
+    {
+        visited[j] = 0;
+    }
     visited[1] = 1;
     for (k = 1; k <= n - 1; k++)
     {
-        min = INF;
+        min = inf;
         for (i = 1; i <= n; i++)
         {
             for (j = 1; j <= n; j++)
             {
-                if (g[i][j] != INF && visited[i] == 1 && visited[j] == 0)
+                if (g[i][j] != inf && visited[i] == 1 && visited[j] == 0)
                 {
                     if (g[i][j] < min)
                     {
@@ -24,17 +27,20 @@ void prims()
                 }
             }
         }
-        printf("\nEdge %d = (%d---%d)", k, v1, v2);
-        visited[v1] = visited[v2] = 1;
-        mincost += min;
+        printf("\nEdge:- %d = ( %d -> %d )", k, v1, v2);
+        visited[v1] = 1;
+        visited[v2] = 1;
+        mincost = mincost + min;
     }
-    printf("\nMinimum Cost:%d", mincost);
+    printf("\nThe minimum cost of spanning tree is-> %d", mincost);
 }
+
 int main()
 {
-    printf("\nEnter the no. of vertices:");
+    int i, j;
+    printf("Enter the no of vertex-");
     scanf("%d", &n);
-    printf("\nEnter the adjacent Matrix:");
+    printf("\nEnter the elements-\n");
     for (i = 1; i <= n; i++)
     {
         for (j = 1; j <= n; j++)
@@ -42,10 +48,17 @@ int main()
             scanf("%d", &g[i][j]);
             if (g[i][j] == 0)
             {
-                g[i][j] = INF;
+                g[i][j] = inf;
             }
         }
     }
     prims();
     return 0;
 }
+/*  
+0 10 0 5 0
+0 0 1 2 0 
+0 0 0 0 4
+0 3 9 0 2
+20 0 6 0 0 
+*/
