@@ -1,3 +1,5 @@
+//N-Queen problem by Backtracking Algorithm
+
 #include <stdio.h>
 #include <stdlib.h>
 int x[100];
