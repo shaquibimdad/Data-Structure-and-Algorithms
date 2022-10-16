@@ -49,3 +49,5 @@ int main()
     printf("\nMax element = %d ", max);
     printf("\nMin element = %d ", min);
 }
+
+//using divide and conquer the time complexity for finding min and max is O(n).
