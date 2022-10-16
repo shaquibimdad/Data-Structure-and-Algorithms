@@ -1,3 +1,5 @@
+//Knapsack problem by greedy algorithm
+
 #include <stdio.h>
 void knapsack(int n, float w[], float p[], float capacity)
 {
