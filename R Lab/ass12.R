@@ -1,0 +1,7 @@
+idata<-as_tibble(iris)
+dim(idata)
+print(a<-idata %>% arrange(desc(Sepal.Length)))
+print(idata %>% arrange(Sepal.Length,Sepal.Width))
+print(idata %>% filter(Sepal.Length>5))
+print(idata %>% slice(5:10))
+print(idata %>% slice_max(Sepal.Length) )
