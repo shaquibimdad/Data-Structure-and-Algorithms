@@ -1,0 +1,12 @@
+empId<-c(1,2,3,4)
+empName<-c('A','B','C','D')
+empSal<-c(5000,1000,3000,2000)
+ml<-list("ID"=empId,"Name"=empName,"Salary"=empSal)
+ml
+print(ml[[2]])
+empAge<-list("Age"=c(20,22,21,23))
+ml<-c(ml,empAge)
+ml
+m<-matrix(unlist(ml),nrow=4,ncol=4,byrow=FALSE)
+m
+class(m)
