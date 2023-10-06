@@ -1,3 +1,5 @@
+/*2. Write a C program to represent a sparse matrix in three tuple format.*/
+
 #include <stdio.h>
 int main()
 {
