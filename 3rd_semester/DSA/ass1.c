@@ -1,3 +1,11 @@
+/*
+1. Write a menu driven C program to implement the following operations in a 1-D array.
+a) Find maximum and minimum element from array along with their position.
+b) Insert an element to a given position.
+c) Remove an element from the array.
+d) Display the array at any particular instance.
+    */
+
 #include <stdio.h>
 #include <stdlib.h>
 
