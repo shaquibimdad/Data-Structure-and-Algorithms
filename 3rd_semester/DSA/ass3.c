@@ -1,3 +1,5 @@
+/*3. Write a C program to solve the Tower of Hanoi problem for n disks (n should be taken as keyboard input) using recursion.*/
+
 #include <stdio.h>
 void towers(int, char, char, char);
 int main()
