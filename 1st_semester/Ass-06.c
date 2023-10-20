@@ -1,3 +1,5 @@
+//Finding min and max of three numbers
+
 #include <stdio.h>
 
 int main(){
