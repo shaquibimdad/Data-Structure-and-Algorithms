@@ -1,3 +1,5 @@
+//Dijkstra using C language.
+
 #include <stdio.h>
 #define inf 9999
 #define max 10
