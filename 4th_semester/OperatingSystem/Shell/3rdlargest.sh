@@ -1,6 +1,5 @@
 #!/bin/bash
-echo "Enter the number of elements"
-read n
+read -p "Enter the number of elements: " n
 echo "Enter the elements"
 for ((i=0;i<n;i++))
 do
