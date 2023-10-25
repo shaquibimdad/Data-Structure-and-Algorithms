@@ -6,13 +6,13 @@ float f(float x, float y)
 int main()
 {
     float x0, y0, xn, h;
-    printf("\nEnter the initial value of x:");
+    printf("\nEnter the initial value of x: ");
     scanf("%f", &x0);
-    printf("\nEnter the initial value of y:");
+    printf("\nEnter the initial value of y: ");
     scanf("%f", &y0);
-    printf("\nEnter the final value of x:");
+    printf("\nEnter the final value of x: ");
     scanf("%f", &xn);
-    printf("\nEnter the step length:");
+    printf("\nEnter the step length: ");
     scanf("%f", &h);
     do
     {
