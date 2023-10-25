@@ -1,4 +1,4 @@
-//Code for Swapping using C Language
+//swapping without using third variable
 #include <stdio.h>
 int main(){
 

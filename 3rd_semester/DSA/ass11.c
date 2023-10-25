@@ -1,3 +1,5 @@
+// All types of sorting using switch Case in C language
+
 #include <stdio.h>
 #include <stdlib.h>
 #define Maxsize 10
