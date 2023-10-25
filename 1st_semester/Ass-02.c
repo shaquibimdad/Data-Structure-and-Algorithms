@@ -6,7 +6,7 @@ int main()
     char c;
     double d;
 
-    printf("\nEnter the value of (integer) a:");
+    printf("\nEnter THE value of (integer) a:");
     scanf("%d", &a);
     printf("\nEnter the value of (float) b:");
     scanf("%f", &b);
