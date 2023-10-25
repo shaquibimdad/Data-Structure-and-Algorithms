@@ -5,7 +5,7 @@ int main(){
     int x,i;
     int y = 0;
 
-    printf("Enter Value for X: ");
+    printf("Please Enter Value for X: ");
     scanf("%d", &x);
 
     for(i=1; i<=5; i++){
