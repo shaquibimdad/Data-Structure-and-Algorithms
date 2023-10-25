@@ -42,18 +42,6 @@ public class Time {
 
 	}
 
-//	public void add_time(Time An)
-
-//	{
-
-//		this.hr += An.hr;
-
-//		this.min += An.min;
-
-//		this.sec+= An.sec;
-
-//	}
-
 	public Time add_time(Time An)
 
 	{
@@ -107,8 +95,6 @@ public class Time {
 	{
 
 		System.out.println(hr + " Hours " + min + " Minutes " + sec +" Seconds ");
-
-//		System.out.println("h:"+hr+"min:"+min+"sec:"+sec );
 
 	}
 
