@@ -1,3 +1,5 @@
+//Linear Search
+
 #include <stdio.h>
 #define Maxsize 10
 int main()
