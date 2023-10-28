@@ -1,3 +1,10 @@
+/* Write a C program for the following purposes in linked list-
+    1. Create a new node
+    2. Delete a node 
+    3. Delete from a given position
+    4. Insert after a given position
+    5. Insert at a given position
+
 #include <stdio.h>
 #include <stdlib.h>
 struct node
