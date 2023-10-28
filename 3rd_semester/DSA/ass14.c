@@ -1,3 +1,5 @@
+/*Binary Search Tree with functionality like - Inserting a node , Inorder Traversal, Preorder Traversal, Postorder traversal . */
+
 #include <stdio.h>
 #include <stdlib.h>
 
